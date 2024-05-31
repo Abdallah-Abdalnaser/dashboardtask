@@ -1,0 +1,55 @@
+@use '../../../scss/variable.scss' as *;
+@use '../../../scss/mixin.scss' as *;
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: fit-content;
+  padding: 25px;
+  background-color:$orange1;
+  color: white;
+  border-top-right-radius:20px;
+  border-bottom-right-radius:20px;
+  @include breakpoint("mobile") {
+    padding: 17px;
+  }
+  >fa-icon {
+    &:first-of-type {
+      font-size:35px;
+    }
+    &:last-of-type {
+      font-size:25px;
+      margin-bottom: 60px;
+    }
+    &:hover {
+      color: $background;
+    }
+    color: $orange2;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  ul {
+    padding: 0px;
+    li {
+      list-style: none;
+      cursor: pointer;
+      margin: 20px 0px;
+      &.active {
+        fa-icon , mat-icon {
+          color:$background !important;
+        }
+      }
+      fa-icon , mat-icon {
+        font-size:25px;
+        color: $orange2;
+        transition: 0.3s;
+        &:hover {
+          color: $background;
+        }
+      }
+    }
+  }
+}
