@@ -1,0 +1,173 @@
+@use '../../../scss/variable.scss' as *;
+@use '../../../scss/mixin.scss' as *;
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 30px 25px;
+  @include breakpoint("mobile") {
+    flex-direction: column;
+    align-items: center;
+  }
+  ul{
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    li {
+      list-style: none;
+    }
+    // Monitored Stations & last update
+    &:nth-child(1) {
+      li {
+        position: relative;
+        display: flex;
+        align-items: center;
+        color: $iconColor;
+        margin-right: 50px;
+        @include breakpoint("mobile") {
+          margin-right: 28px;
+          margin-right: 20px;
+        }
+        figure {
+          margin: 0px;
+          margin-right: 10px;
+          .custom-icon {
+            width: fit-content;
+            height: fit-content;
+            font-size: 30px;
+          }
+        }
+        figcaption {
+          display: flex;
+          align-items: center;
+          span {
+            font-size: 23px;
+            margin-right: 5px;
+            span {
+              font-size: 19px;
+            }
+          }
+          p {
+            display: flex;
+            flex-direction: column;
+            margin: 0px;
+            line-height: 1;
+            span {
+              font-size: 10px;
+            }
+          }
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 10px;
+          left: -10px;
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background-color: $orange1;
+        }
+      }
+      @include breakpoint("mobile") {
+        order: 1;
+        padding: 0;
+        margin-bottom: 10px;
+      }
+    }
+    // Time
+    &:nth-child(2) {
+      background-color: $background;
+      border-radius: 36px;
+      padding: 0px;
+      color: $iconColor;
+      font-size: 12px;
+      width: fit-content;
+      height: fit-content;
+      @include breakpoint("mobile") {
+        font-size: 10px;
+      }
+      li {
+        padding:10px 19px;
+        letter-spacing: 2px;
+        transition: 0.3s;
+        cursor: pointer;
+        &.active {
+          background-color: $orange1;
+          color: white;
+          border-radius: 36px;
+        }
+      }
+      @include breakpoint("mobile") {
+        order: 3;
+      }
+    }
+    // Date
+    &:nth-child(3) {
+      display: flex;
+      li {
+        position: relative;
+        margin: 0px 30px;
+        p-floatLabel {
+          margin-bottom: 100px;
+          ::ng-deep input[type='text'] {
+            border: 0px;
+            border-radius: 0px;
+            border-bottom: 2px solid $iconColor;
+            padding-bottom: 0px;
+          }
+          ::ng-deep input[type='text']:focus {
+            box-shadow: 0 0 0 0.2rem white;
+          }
+          label {
+            font-size: 12px;
+            span {
+              font-weight: bold;
+            }
+          }
+        }
+        &:first-of-type{
+          margin-left: 0px;
+          &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            transform: translatey(-50%);
+            z-index: 1;
+            border-width: 8px;
+            border-style: solid;
+            border-color:transparent transparent transparent $orange1;
+          }
+        }
+        &:last-of-type{
+          margin-right: 0px;
+          &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            transform: translatey(-50%);
+            width: 11px;
+            height: 11px;
+            z-index: 1;
+            background-color: $orange1;
+          }
+        }
+        @include breakpoint("mobile") {
+          margin: 0px;
+        }
+      }
+      @include breakpoint("mobile") {
+        order: 2;
+        padding: 0;
+        margin-bottom: 30px;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+
+

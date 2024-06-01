@@ -1,0 +1,60 @@
+<header>
+  <!-- Monitored Stations & last update-->
+  <ul>
+    <li>
+      <figure>
+        <mat-icon class="custom-icon">local_gas_station</mat-icon>
+      </figure>
+      <figcaption>
+        <span>2/3</span>
+        <p>
+          <span>Monitored</span>
+          <span>Stations</span>
+        </p>
+      </figcaption>
+    </li>
+    <li>
+      <figure>
+        <mat-icon class="custom-icon">history</mat-icon>
+      </figure>
+      <figcaption>
+        <span>20<span>s</span></span>
+        <p>
+          <span>Last</span>
+          <span>Update</span>
+        </p>
+      </figcaption>
+    </li>
+  </ul>
+  <!-- Time -->
+  <ul>
+    <li class="active">TODAY</li>
+    <li>YESTERDAY</li>
+    <li>LAST WEEK</li>
+  </ul>
+  <!-- Date -->
+  <ul>
+    <li>
+      <p-floatLabel>
+        <p-calendar
+          [(ngModel)]="date2"
+          [iconDisplay]="'input'"
+          [showIcon]="true"
+          inputId="icondisplay"
+        ></p-calendar>
+        <label for="icondisplay"><span>Start </span>date-time</label>
+      </p-floatLabel>
+    </li>
+    <li>
+      <p-floatLabel>
+        <p-calendar
+          [(ngModel)]="date2"
+          [iconDisplay]="'input'"
+          [showIcon]="true"
+          inputId="icondisplay"
+        ></p-calendar>
+        <label for="icondisplay"><span>End </span>date-time</label>
+      </p-floatLabel>
+    </li>
+  </ul>
+</header>

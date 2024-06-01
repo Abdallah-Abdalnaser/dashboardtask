@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { AnalysisModule } from './analysis/analysis.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     AppRoutingModule,
     LayoutModule,
     FontAwesomeModule,
+    AnalysisModule
   ],
   providers: [
     provideClientHydration(),

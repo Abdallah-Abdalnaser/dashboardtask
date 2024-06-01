@@ -1,0 +1,8 @@
+section {
+  display: flex;
+  overflow: hidden;
+  app-sidbar {}
+  app-analysis {
+    width: 100%;
+  }
+}
