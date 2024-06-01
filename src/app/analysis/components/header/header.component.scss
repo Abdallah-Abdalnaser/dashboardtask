@@ -6,6 +6,7 @@ header {
   align-items: center;
   justify-content: space-between;
   background-color: white;
+  flex-wrap: wrap;
   padding: 30px 25px;
   @include breakpoint("mobile") {
     flex-direction: column;
@@ -20,6 +21,8 @@ header {
     }
     // Monitored Stations & last update
     &:nth-child(1) {
+      padding: 0px;
+      padding-left: 21px;
       li {
         position: relative;
         display: flex;
