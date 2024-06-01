@@ -1,0 +1,38 @@
+@use '../../../scss/variable.scss' as *;
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+    margin: 35px 0px;
+    border-radius: 25px;
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      padding: 10px 20px;
+      color: $iconColor;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+      .custom-icon {
+        width: fit-content;
+        height: fit-content;
+        font-size: 20px;
+        margin-right: 10px;
+      }
+      &.active {
+        background-color:$orange1;
+        color: white;
+      }
+    }
+  }
+}

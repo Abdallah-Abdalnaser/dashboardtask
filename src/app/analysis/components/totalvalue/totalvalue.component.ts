@@ -11,6 +11,5 @@ export class TotalvalueComponent {
   data!:data[];
   constructor(private TotalvalueService:TotalvalueService) {
     this.data = this.TotalvalueService.data;
-    console.log(this.data);
   }
 }

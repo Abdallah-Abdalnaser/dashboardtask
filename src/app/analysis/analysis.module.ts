@@ -14,6 +14,10 @@ import { BarcharComponent } from './components/graph/barchar/barchar.component';
 import { ListComponent } from './components/graph/list/list.component';
 import { TotalvalueComponent } from './components/totalvalue/totalvalue.component';
 import { register } from 'swiper/element/bundle';
+import { ChartModule } from 'primeng/chart';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from '../app-routing.module';
+
 register();
 
 @NgModule({
@@ -33,7 +37,10 @@ register();
     CalendarModule,
     FormsModule,
     FloatLabelModule,
-    MatIconModule
+    MatIconModule,
+    ChartModule,
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],exports: [

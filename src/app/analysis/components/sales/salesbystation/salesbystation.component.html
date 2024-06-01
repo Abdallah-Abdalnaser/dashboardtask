@@ -1,1 +1,16 @@
-<p>salesbystation works!</p>
+<ul>
+  <li *ngFor="let list of data">
+    <div class="info">
+      <div class="icon">
+        <mat-icon class="custom-icon">local_gas_station</mat-icon>
+        <p>Station Name</p>
+      </div>
+      <p *ngIf="list.S === 'active'">{{list.TS}} m<sup>3</sup></p>
+    </div>
+    <div class="progressbar">
+      <div class="bar" [ngClass]="{active: list.S === 'active'}">
+        <span></span>
+      </div>
+    </div>
+  </li>
+</ul>

@@ -1,1 +1,80 @@
-<p>list works!</p>
+<div class="con">
+  <div class="card" *ngFor="let card of data; let i = index">
+    <header>
+      <div class="icon" [ngClass]="{active: card.S === 'active'}">
+        <mat-icon class="custom-icon" [ngClass]="{active: card.S === 'active'}">local_gas_station</mat-icon>
+        <h1>Station Name Dummy</h1>
+      </div>
+      <div (click)="change(i)">
+        <mat-icon class="custom-icon2">more_horiz</mat-icon>
+      </div>
+    </header>
+    <ul>
+      <li>
+        <div class="data1">
+          <p>Total Sales</p>
+          <p>{{card.TS}} m<sup>3</sup></p>
+        </div>
+        <div class="data2">
+          <p>Total Value</p>
+          <p>{{card.TV}} EGP</p>
+        </div>
+      </li>
+      <li>
+        <div class="data1">
+          <p>Compression State</p>
+          <p>{{card.Com}}</p>
+        </div>
+        <div class="data2">
+          <p>Total Transaction</p>
+          <p>{{card.T}} EGP</p>
+        </div>
+      </li>
+      <li>
+        <div class="data1">
+          <p>Max Transaction / hour</p>
+          <p>{{card.MTH}}</p>
+        </div>
+        <div class="data2">
+          <p>Max Transaction / Date</p>
+          <p>{{card.MTD}}</p>
+        </div>
+      </li>
+    </ul>
+    <div class="menu" [ngClass]="{active: activeMenu === i}">
+      <header>
+        <h1>View Properties:</h1>
+      </header>
+      <ul>
+        <li>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" checked>
+            <label class="form-check-label" for="flexCheckDefault1">Total sales</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2" checked>
+            <label class="form-check-label" for="flexCheckDefault2">Total Transaction</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3" checked>
+            <label class="form-check-label" for="flexCheckDefault3">Total value</label>
+          </div>
+        </li>
+        <li>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
+            <label class="form-check-label" for="flexCheckDefault4">Max Transaction per hour</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5">
+            <label class="form-check-label" for="flexCheckDefault5">Max Transaction per date</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6">
+            <label class="form-check-label" for="flexCheckDefault6">Compressor status</label>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

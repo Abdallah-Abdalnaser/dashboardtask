@@ -1,0 +1,129 @@
+@use '../../../../scss/variable.scss' as *;
+
+.con {
+  max-height: 400px;
+  overflow-y:scroll;
+  padding-right: 15px;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: $orange1;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    width: 5px;
+    background-color: $orange2;
+  }
+  .card {
+    position: relative;
+    border: 0px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+      margin: 10px;
+      padding: 15px;
+      .icon {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &::before {
+          content: "";
+          position: absolute;
+          background-color: $iconColor;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          bottom: 4px;
+          left: -10px;
+        }
+        &.active {
+          &::before {
+            background-color: $orange1;
+          }
+        }
+        .custom-icon {
+          width: fit-content;
+          height: fit-content;
+          font-size: 40px;
+          color: $iconColor;
+          margin-right: 10px;
+          &.active {
+            color: $orange1;
+          }
+        }
+        h1 {
+          margin: 0px;
+          color:$iconColor2;
+          font-size: 23px;
+          font-weight: 500;
+        }
+      }
+      .custom-icon2 {
+        cursor:  pointer;
+      }
+    }
+    ul {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 50px;
+      li {
+        list-style: none;
+        .data1 ,.data2 {
+          display: flex;
+          font-size: 11px;
+          p {
+            &:first-of-type {
+              font-weight: 500;
+            }
+            margin:10px;
+          }
+        }
+
+      }
+    }
+    .menu {
+      display: none;
+      position: absolute;
+      background-color: white;
+      width: 50%;
+      right: 47px;
+      top: 37px;
+      box-shadow: 0px 0px 10px #eee;
+      border-radius: 10px;
+      header {
+        padding: 5px 16px;
+        h1 {
+          font: {
+            size: 12px;
+            weight:500
+          }
+          margin: 0;
+          padding: 0px;
+        }
+      }
+      ul {
+        padding: 3px 25px;
+        margin: 0px;
+        li {
+          font-size: 10px;
+          input[type="checkbox"] {
+            border-color: $orange1;
+            &:checked {
+              background-color: $orange1;
+              box-shadow: 0 0 0 .25rem $orange2;
+            }
+          }
+        }
+      }
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
