@@ -1,3 +1,9 @@
-app-header {
-  background-color: red;
+.container {
+  display: flex;
+  .data {
+    flex: 2;
+  }
+  app-sales {
+    flex: 1;
+  }
 }

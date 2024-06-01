@@ -1,0 +1,13 @@
+<div class="data">
+  <div class="cart" *ngFor="let card of data">
+    <div class="num">
+      <h1>{{card.value}}</h1>
+      <span>{{card.Unit}} <sup>{{card.degree}}</sup></span>
+    </div>
+    <p>{{card.name}}</p>
+    <span [ngClass]="{decrease:card.status === 'decrease',increase:card.status === 'increase'}">
+      {{card.present}}
+      <sup>{{card.degree}}</sup>
+    </span>
+  </div>
+</div>

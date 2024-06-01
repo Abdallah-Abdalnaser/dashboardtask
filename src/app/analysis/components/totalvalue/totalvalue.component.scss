@@ -1,0 +1,78 @@
+@use '../../../scss/variable.scss' as *;
+@use '../../../scss/mixin.scss' as *;
+
+.data {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 50px;
+  @include breakpoint("mobile") {
+    justify-content: center;
+  }
+  .cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: white;
+    color: $iconColor2;
+    border-radius: 15px;
+    padding: 20px 30px;
+    width: 200px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      background-color: $orange2;
+    }
+    .num {
+      display: flex;
+      align-items: flex-end;
+      h1 {
+        margin: 0px;
+        margin-right: 6px;
+        font: {
+          size:30px;
+          weight:400;
+        };
+      }
+      span {
+
+      }
+    }
+    p {
+      margin: 0px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    > span {
+      position: relative;
+      margin-left: 24px;
+      &::before {
+        content: '';
+        position: absolute;
+        border-width: 7px;
+      }
+      &.decrease {
+        color: $orange1;
+        &::before {
+          top: 90%;
+          left: -20px;
+          transform: translateY(-90%);
+          border-color:$orange1 transparent transparent transparent;
+          border-style: solid;
+        }
+      }
+      &.increase{
+        color: $increase;
+        &::before {
+          top: 20%;
+          left: -20px;
+          transform: translateY(-20%);
+          border-color:transparent transparent $increase transparent;
+          border-style: solid;
+        }
+      }
+    }
+  }
+}
